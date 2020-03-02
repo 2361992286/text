@@ -1,0 +1,26 @@
+#生成券码
+import random
+
+#列表元素转化为字符
+numbers = [str(i) for i in range(0, 10)]
+letters = [str(chr(i)) for i in range(97, 123)]
+
+l = numbers + letters
+
+
+#生成四位随机数序列
+def randl1():
+    l1 = "".join(random.sample(l, 4))
+    return l1
+
+#序列拼接
+def randlr():
+    lr = "-".join([randl1() for i in range(0,4)])
+    return lr
+
+
+secret="\n".join([randlr() for i in range(20)])
+print(secret)
+
+
+
